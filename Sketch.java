@@ -24,14 +24,6 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 	  
-	// sample code, delete this stuff
-    /*
-    stroke(128);
-    line(150, 25, 270, 350);  
-
-    stroke(255);
-    line(50, 125, 70, 50);  
-*/
     draw_section_outlines();
     draw_section1();
     draw_section2();
@@ -70,14 +62,17 @@ public class Sketch extends PApplet {
    * draws the bottom left section
    */
   public void draw_section1(){
+    // declare variables
     int intX = 0;
     int intY = 0;
 
+    // calculate coordinates 
     for(int intRow = 0; intRow < 300; intRow += 10){
       for(int intColumn = 0; intColumn < 300; intColumn += 10){
         intX = 3 + intRow;  //Instead of zero, calculate the proper intX location using 'intRow'
         intY = 300 + 3 + intColumn; //Instead of zero, calculate the proper intY location using 'intColumn'
 
+        // draw squares
         noStroke();
         fill(255);
         rect(intX, intY, 5, 5);
@@ -91,22 +86,26 @@ public class Sketch extends PApplet {
    * Don't loop from 30 to 60 to shift everything over, just add 300 to x.
    */
   public void draw_section2(){
+    // declare variables
     int intX = 0;
     int intY = 0;
     int intColor;
 
+    // calculate coordinates
     for(int intRow = 0; intRow < 300; intRow += 10){
       for(int intColumn = 0; intColumn < 300; intColumn += 10){
         intX = 300 + 3 + intRow;
         intY = 300 + 3 + intColumn;
 
+        // determine color
         if((intRow / 10) % 2 == 0){
           intColor = 255;
         }
         else{
           intColor = 0;
         }
-        
+
+        // draw squares
         noStroke();
         fill(intColor);
         rect(intX, intY, 5, 5);
@@ -120,22 +119,26 @@ public class Sketch extends PApplet {
    */
       
   public void draw_section3(){
+    // declare variables
     int intX = 0;
     int intY = 0;
     int intColor;
 
+    // calculate coordinates
     for(int intRow = 0; intRow < 300; intRow += 10){
       for(int intColumn = 0; intColumn < 300; intColumn += 10){
         intX = 600 + 3 + intRow;
         intY = 300 + 3 + intColumn;
 
+        // determine color
         if((intColumn / 10) % 2 != 0){
           intColor = 255;
         }
         else{
           intColor = 0;
         }
-        
+
+        // draw squares
         noStroke();
         fill(intColor);
         rect(intX, intY, 5, 5);
@@ -147,22 +150,26 @@ public class Sketch extends PApplet {
    * Use the modulus operator and just one 'if' statement to select the color.
    */
   public void draw_section4(){
+    // declare variables
     int intX = 0;
     int intY = 0;
     int intColor;
 
+    // calculate coordinates
     for(int intRow = 0; intRow < 300; intRow += 10){
       for(int intColumn = 0; intColumn < 300; intColumn += 10){
         intX = 900 + 3 + intRow;
         intY = 300 + 3 + intColumn;
 
+        // determine color
         if((intColumn / 10) % 2 != 0 && (intRow / 10) % 2 == 0){
           intColor = 255;
         }
         else{
           intColor = 0;
         }
-        
+
+        // draw squares
         noStroke();
         fill(intColor);
         rect(intX, intY, 5, 5);
@@ -174,18 +181,37 @@ public class Sketch extends PApplet {
    * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
    */
   public void draw_section5(){
-
-  }
-
-  public void draw_section6(){
+    // declare variables
     int intX = 0;
     int intY = 0;
 
+    // calculate coordinates
+    for(int intColumn = 0; intColumn < 300; intColumn += 10){
+      for(int intRow = 300 - intColumn; intRow < 300; intRow += 10){
+        intX = 3 + intRow;
+        intY = 3 + intColumn;
+
+        // draw squares
+        noStroke();
+        fill(255);
+        rect(intX, intY, 5, 5);
+
+      }
+    }
+  }
+
+  public void draw_section6(){
+    // declare variables
+    int intX = 0;
+    int intY = 0;
+
+    // calculate coordinates
     for(int intRow = 290; intRow >= 0; intRow -= 10){
       for(int intColumn = 290; intColumn >= intRow; intColumn -= 10){
         intX = 300 + 3 + intRow;
         intY = 3 + intColumn;
 
+        // draw squares
         noStroke();
         fill(255);
         rect(intX, intY, 5, 5);
@@ -195,19 +221,17 @@ public class Sketch extends PApplet {
   }
 
   public void draw_section7(){
-
-  }
-
-  
-  public void draw_section8(){
+    // declare variables
     int intX = 0;
     int intY = 0;
 
-    for(int intRow = 0; intRow < 300; intRow += 10){
-      for(int intColumn = 0; intColumn <= intRow; intColumn += 10){
-        intX = 900 + 3 + intRow;
+    // calculate coordinates
+    for(int intColumn = 0; intColumn < 300; intColumn += 10){
+      for(int intRow = 290 - intColumn; intRow >= 0; intRow -= 10){
+        intX = 600 + 3 + intRow;
         intY = 3 + intColumn;
 
+        // draw squares
         noStroke();
         fill(255);
         rect(intX, intY, 5, 5);
@@ -216,9 +240,24 @@ public class Sketch extends PApplet {
     }
   }
 
+  
+  public void draw_section8(){
+    // declare variables
+    int intX = 0;
+    int intY = 0;
 
+    // calculate coordinates
+    for(int intRow = 0; intRow < 300; intRow += 10){
+      for(int intColumn = 0; intColumn <= intRow; intColumn += 10){
+        intX = 900 + 3 + intRow;
+        intY = 3 + intColumn;
 
+        // draw squares
+        noStroke();
+        fill(255);
+        rect(intX, intY, 5, 5);
 
-
-
+      }
+    }
+  }
 }
